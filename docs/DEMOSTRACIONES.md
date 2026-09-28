@@ -4,22 +4,22 @@
 
 ## Qué enseña esta publicación
 
-Lámina técnica de un entorno de ejemplo: recursos, vista central y estado de ejecución.
+Lámina conceptual de un entorno de creación y ejecución. Representa la intención del experimento, no una consola distribuida.
 
-Se explican responsabilidades y experiencia; se reservan el motor, los contratos binarios y los mecanismos internos.
+El caso explica el papel de Flutter, Dart FFI y Rust a alto nivel. El motor, los contratos binarios y los recursos de prueba se mantienen privados.
 
 ## Guion del caso de estudio
 
 Este guion sirve para explicar el recorrido documentado y preparar una demostración controlada. No afirma que se haya ejecutado completo durante esta publicación.
 
-1. **Abrir un entorno.** Observar: Organización visual de recursos y entornos de trabajo.
-2. **Organizar sus recursos.** Observar: Observación de una escena mientras se trabaja sobre sus recursos.
-3. **Observar la ejecución.** Observar: Agrupación de contenido para un entorno concreto.
-4. **Revisar el estado.** Observar: Señales operativas para entender carga, ejecución y recursos.
+1. **Abrir un proyecto.** Observar: Exploración de un espacio para organizar proyectos y recursos de juego.
+2. **Preparar sus recursos.** Observar: Investigación de una base Rust conectada a la experiencia visual.
+3. **Explorar la ejecución.** Observar: Experimentación con la comunicación entre Dart y el entorno nativo.
+4. **Revisar la experiencia.** Observar: Visión de un entorno común para crear, cargar y ejecutar juegos propios.
 
 ## Lectura de la lámina
 
-![Lámina conceptual: Abrir un entorno → Organizar sus recursos → Observar la ejecución → Revisar el estado.](../assets/experiencia.svg)
+![Lámina conceptual: Abrir un proyecto → Preparar sus recursos → Explorar la ejecución → Revisar la experiencia.](../assets/experiencia.svg)
 
 La ilustración reúne las piezas y sus relaciones. Sus estados, textos de muestra y formas son editoriales. Las capturas reales, cuando existen, aparecen identificadas por separado.
 

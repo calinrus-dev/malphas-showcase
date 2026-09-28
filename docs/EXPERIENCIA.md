@@ -4,39 +4,39 @@
 
 ## Intención
 
-Editar recursos, organizar entornos y observar una ejecución suelen ser tareas separadas. Malphas investiga cómo reunirlas sin mezclar la presentación visual con las responsabilidades del motor.
+Una consola de fantasía ofrece un entorno reconocible para crear y jugar. Malphas investiga cómo llevar esa idea a herramientas modernas: una interfaz Flutter y una base nativa, manteniendo cerca el trabajo del creador y la experiencia de ejecución.
 
 ## El recorrido
 
-### 1. Abrir un entorno
+### 1. Abrir un proyecto
 
-Organización visual de recursos y entornos de trabajo.
-
-La revisión de esta fase observa si el contexto, la acción disponible y el resultado pueden entenderse sin perder el hilo del trabajo.
-
-### 2. Organizar sus recursos
-
-Observación de una escena mientras se trabaja sobre sus recursos.
+Exploración de un espacio para organizar proyectos y recursos de juego.
 
 La revisión de esta fase observa si el contexto, la acción disponible y el resultado pueden entenderse sin perder el hilo del trabajo.
 
-### 3. Observar la ejecución
+### 2. Preparar sus recursos
 
-Agrupación de contenido para un entorno concreto.
+Investigación de una base Rust conectada a la experiencia visual.
 
 La revisión de esta fase observa si el contexto, la acción disponible y el resultado pueden entenderse sin perder el hilo del trabajo.
 
-### 4. Revisar el estado
+### 3. Explorar la ejecución
 
-Señales operativas para entender carga, ejecución y recursos.
+Experimentación con la comunicación entre Dart y el entorno nativo.
+
+La revisión de esta fase observa si el contexto, la acción disponible y el resultado pueden entenderse sin perder el hilo del trabajo.
+
+### 4. Revisar la experiencia
+
+Visión de un entorno común para crear, cargar y ejecutar juegos propios.
 
 La revisión de esta fase observa si el contexto, la acción disponible y el resultado pueden entenderse sin perder el hilo del trabajo.
 
 ## Criterios de interacción
 
-- **Presentación reemplazable.** La interfaz expresa el trabajo; el motor conserva las responsabilidades de ejecución.
-- **Un entorno como unidad.** Los recursos se presentan con un contexto reconocible para el usuario.
-- **Observar antes de afirmar.** Las visualizaciones operativas no sustituyen un benchmark reproducible.
+- **Un experimento con una dirección clara.** La consola de fantasía es la visión de producto; no se presenta como una plataforma terminada para terceros.
+- **Crear y ejecutar en un mismo contexto.** El interés está en conectar el trabajo sobre recursos con la experiencia del juego.
+- **Investigar el límite entre interfaz y motor.** Dart FFI permite explorar esa relación, sin publicar contratos ni implementación interna.
 
 ## Accesibilidad como criterio de diseño
 

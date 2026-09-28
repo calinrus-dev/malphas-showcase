@@ -2,7 +2,7 @@
 
 [← Inicio](../README.md)
 
-**Estado publicado:** Motor y herramientas en desarrollo.  
+**Estado publicado:** Experimento de consola de fantasía.  
 **Fecha de revisión:** 28 de septiembre de 2026.
 
 ## Qué se ha comprobado
@@ -11,15 +11,15 @@ Se revisaron las notas de la versión 3.0 y la documentación del proyecto. Esta
 
 ## Alcance actual
 
-- Las plataformas listadas en el stack no equivalen a certificación universal.
-- La galería conceptual no es una captura de una versión distribuida.
-- Los resultados de rendimiento necesitan hardware, escena y metodología identificados.
+- La creación y distribución de juegos por terceros es una dirección de producto, no una plataforma pública validada.
+- La lámina no es una captura de una consola terminada.
+- El experimento no publica un SDK, un catálogo de juegos ni cifras de rendimiento verificadas.
 
 ## Siguientes pasos
 
-- Consolidar los recorridos de edición y ejecución.
-- Preparar demostraciones reproducibles con recursos de muestra.
-- Publicar evidencia visual de estabilidad y comportamiento.
+- Acotar una experiencia mínima de consola de fantasía.
+- Preparar un juego propio de muestra para demostrar el recorrido.
+- Evaluar la ergonomía de creación y la relación entre Dart FFI y ejecución nativa.
 
 ## Cómo se mantiene este caso
 

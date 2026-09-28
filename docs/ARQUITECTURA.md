@@ -4,9 +4,9 @@
 
 ## Contexto
 
-Un entorno que combina un motor nativo, herramientas de recursos y una interfaz visual para explorar experiencias interactivas.
+Un experimento de consola de fantasía moderna que explora cómo conectar Flutter y un núcleo nativo Rust mediante Dart FFI, con la intención de ofrecer un entorno donde crear y ejecutar juegos propios.
 
-**Tecnologías asociadas al proyecto:** Rust · Flutter · Dart.
+**Tecnologías asociadas al proyecto:** Dart FFI · Flutter · Rust.
 
 ## Mapa de responsabilidades
 
@@ -14,22 +14,22 @@ Este mapa conceptual organiza la explicación del producto; no representa endpoi
 
 ```mermaid
 flowchart TD
-    A["Workspace Flutter"] --> B["Coordinación de experiencia"]
-    B --> C["Motor nativo Rust"]
-    C --> D["Recursos del entorno"]
+    A["Herramientas Flutter"] --> B["Coordinación en Dart"]
+    B --> C["Puente FFI conceptual"]
+    C --> D["Ejecución nativa Rust"]
 ```
 
-## Presentación reemplazable
+## Un experimento con una dirección clara
 
-La interfaz expresa el trabajo; el motor conserva las responsabilidades de ejecución.
+La consola de fantasía es la visión de producto; no se presenta como una plataforma terminada para terceros.
 
-## Un entorno como unidad
+## Crear y ejecutar en un mismo contexto
 
-Los recursos se presentan con un contexto reconocible para el usuario.
+El interés está en conectar el trabajo sobre recursos con la experiencia del juego.
 
-## Observar antes de afirmar
+## Investigar el límite entre interfaz y motor
 
-Las visualizaciones operativas no sustituyen un benchmark reproducible.
+Dart FFI permite explorar esa relación, sin publicar contratos ni implementación interna.
 
 ## Rendimiento y dependencia
 
@@ -41,6 +41,6 @@ No se publican cifras de rendimiento sin un ensayo identificado. La evidencia es
 
 ## Qué conviene demostrar después
 
-- Consolidar los recorridos de edición y ejecución.
-- Preparar demostraciones reproducibles con recursos de muestra.
-- Publicar evidencia visual de estabilidad y comportamiento.
+- Acotar una experiencia mínima de consola de fantasía.
+- Preparar un juego propio de muestra para demostrar el recorrido.
+- Evaluar la ergonomía de creación y la relación entre Dart FFI y ejecución nativa.

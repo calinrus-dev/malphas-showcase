@@ -1,36 +1,36 @@
-![Malphas — Un motor. Un espacio de trabajo.](assets/hero.svg)
+![Malphas — Una consola de fantasía para crear.](assets/hero.svg)
 
 # Malphas
 
-**Un motor. Un espacio de trabajo.**
+**Una consola de fantasía para crear.**
 
-Un entorno que combina un motor nativo, herramientas de recursos y una interfaz visual para explorar experiencias interactivas.
+Un experimento de consola de fantasía moderna que explora cómo conectar Flutter y un núcleo nativo Rust mediante Dart FFI, con la intención de ofrecer un entorno donde crear y ejecutar juegos propios.
 
-**Stack:** Rust · Flutter · Dart  
-**Estado:** Motor y herramientas en desarrollo
+**Stack:** Dart FFI · Flutter · Rust  
+**Estado:** Experimento de consola de fantasía
 
 [Portfolio](https://github.com/calinrus-dev/portfolio) · [Experiencia](docs/EXPERIENCIA.md) · [Componentes](docs/COMPONENTES.md) · [Diseño técnico](docs/ARQUITECTURA.md) · [Demostraciones](docs/DEMOSTRACIONES.md) · [Estado](docs/ESTADO.md)
 
 ## El problema que aborda
 
-Editar recursos, organizar entornos y observar una ejecución suelen ser tareas separadas. Malphas investiga cómo reunirlas sin mezclar la presentación visual con las responsabilidades del motor.
+Una consola de fantasía ofrece un entorno reconocible para crear y jugar. Malphas investiga cómo llevar esa idea a herramientas modernas: una interfaz Flutter y una base nativa, manteniendo cerca el trabajo del creador y la experiencia de ejecución.
 
 ## Qué compone la experiencia
 
-- **Workspace.** Organización visual de recursos y entornos de trabajo.
-- **Vista de ejecución.** Observación de una escena mientras se trabaja sobre sus recursos.
-- **Paquetes.** Agrupación de contenido para un entorno concreto.
-- **Diagnóstico.** Señales operativas para entender carga, ejecución y recursos.
+- **Entorno de creación.** Exploración de un espacio para organizar proyectos y recursos de juego.
+- **Ejecución nativa.** Investigación de una base Rust conectada a la experiencia visual.
+- **Puente Dart FFI.** Experimentación con la comunicación entre Dart y el entorno nativo.
+- **Experiencia de consola.** Visión de un entorno común para crear, cargar y ejecutar juegos propios.
 
-![Mapa conceptual de Malphas: Abrir un entorno → Organizar sus recursos → Observar la ejecución → Revisar el estado.](assets/experiencia.svg)
+![Mapa conceptual de Malphas: Abrir un proyecto → Preparar sus recursos → Explorar la ejecución → Revisar la experiencia.](assets/experiencia.svg)
 
 *Lámina explicativa con datos ficticios. Su contenido también está disponible como texto en [Componentes](docs/COMPONENTES.md).*
 
 ## Decisiones que definen el proyecto
 
-- **Presentación reemplazable.** La interfaz expresa el trabajo; el motor conserva las responsabilidades de ejecución.
-- **Un entorno como unidad.** Los recursos se presentan con un contexto reconocible para el usuario.
-- **Observar antes de afirmar.** Las visualizaciones operativas no sustituyen un benchmark reproducible.
+- **Un experimento con una dirección clara.** La consola de fantasía es la visión de producto; no se presenta como una plataforma terminada para terceros.
+- **Crear y ejecutar en un mismo contexto.** El interés está en conectar el trabajo sobre recursos con la experiencia del juego.
+- **Investigar el límite entre interfaz y motor.** Dart FFI permite explorar esa relación, sin publicar contratos ni implementación interna.
 
 ## Explorar el caso
 
