@@ -1,0 +1,21 @@
+name: Verify public sample
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: dart-lang/setup-dart@6afc89df92d6eb3834022f73cd65adc8cdfcb92d
+        with:
+          sdk: '3.8.1'
+      - run: rustc --version && dart --version
+      - run: cargo test --manifest-path samples/ffi/Cargo.toml --locked
+      - run: cargo build --manifest-path samples/ffi/Cargo.toml --release --locked
+      - run: dart analyze samples/ffi/check.dart
+      - run: dart run check.dart
+        working-directory: samples/ffi

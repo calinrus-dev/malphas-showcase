@@ -1,49 +1,37 @@
-![Malphas — Una consola de fantasía para crear.](assets/hero.svg)
+# Malphas / Una consola de fantasía, un límite real.
 
-# Malphas
+**Experimento de consola de fantasía moderna** para explorar un entorno donde crear y ejecutar juegos propios. Dart FFI, Flutter y Rust. Un laboratorio técnico secundario dentro de mi trabajo.
 
-**Una consola de fantasía para crear.**
+## Rust escribe. Dart lo ve.
 
-Un experimento de consola de fantasía moderna que explora cómo conectar Flutter y un núcleo nativo Rust mediante Dart FFI, con la intención de ofrecer un entorno donde crear y ejecutar juegos propios.
+La muestra pública asigna un framebuffer RGBA de **64 × 64**, lo conserva en Rust y lo observa desde Dart mediante una vista de memoria nativa. Dos llamadas de render, una misma dirección, un cambio verificable en el contenido. Sin Flutter y sin paquetes externos.
 
-**Stack:** Dart FFI · Flutter · Rust  
-**Estado:** Experimento de consola de fantasía
+[Rust y contrato de memoria](samples/ffi/src/lib.rs) · [Consumidor Dart y comprobación cruzada](samples/ffi/check.dart)
 
-[Portfolio](https://github.com/calinrus-dev/portfolio) · [Experiencia](docs/EXPERIENCIA.md) · [Componentes](docs/COMPONENTES.md) · [Diseño técnico](docs/ARQUITECTURA.md) · [Demostraciones](docs/DEMOSTRACIONES.md) · [Estado](docs/ESTADO.md)
+[![Pruebas de la muestra](https://github.com/calinrus-dev/malphas-showcase/actions/workflows/verify.yml/badge.svg)](https://github.com/calinrus-dev/malphas-showcase/actions/workflows/verify.yml)
 
-## El problema que aborda
+~~~sh
+cd samples/ffi
+cargo test --locked
+cargo build --release --locked
+dart analyze check.dart
+dart run check.dart
+~~~
 
-Una consola de fantasía ofrece un entorno reconocible para crear y jugar. Malphas investiga cómo llevar esa idea a herramientas modernas: una interfaz Flutter y una base nativa, manteniendo cerca el trabajo del creador y la experiencia de ejecución.
+Resultado esperado: `same_allocation: true`, `borrowed_view_observes_write: true`, checksums **1431552 → 1435648**. Las comprobaciones de Dart lanzan errores explícitos; no dependen de activar assertions.
 
-## Qué compone la experiencia
+## La frontera no perdona
 
-- **Entorno de creación.** Exploración de un espacio para organizar proyectos y recursos de juego.
-- **Ejecución nativa.** Investigación de una base Rust conectada a la experiencia visual.
-- **Puente Dart FFI.** Experimentación con la comunicación entre Dart y el entorno nativo.
-- **Experiencia de consola.** Visión de un entorno común para crear, cargar y ejecutar juegos propios.
+- Rust conserva la propiedad. Dart toma una vista prestada y deja de usarla antes de liberar.
+- Las llamadas son síncronas. No hay lectura concurrente con escritura ni liberación.
+- El contrato define nulos, longitud, patrón y liberación única. No puede convertir un puntero arbitrario o un double-free en algo seguro.
+- La alineación de 64 bytes es una elección del experimento. No demuestra una mejora de caché ni describe todos los procesadores.
 
-![Mapa conceptual de Malphas: Abrir un proyecto → Preparar sus recursos → Explorar la ejecución → Revisar la experiencia.](assets/experiencia.svg)
+No se copia el framebuffer al crear la vista de Dart. Eso **no** significa que una futura subida a GPU o una UI Flutter completa carezcan de copias. Aquí se demuestra exactamente el tramo publicado.
 
-*Lámina explicativa con datos ficticios. Su contenido también está disponible como texto en [Componentes](docs/COMPONENTES.md).*
+**Referencia nueva para publicación. No es la ABI, el runtime, el formato de cartuchos ni el sistema de firmas privados de Malphas.** No se publican cifras de FPS, comparaciones de rendimiento ni certificación multi-arquitectura a partir de este ejemplo.
 
-## Decisiones que definen el proyecto
+[Intención de la consola](docs/EXPERIENCIA.md) · [Origen y límites](docs/PROVENANCE.md) · [Verificación](docs/VERIFICATION.md) · [Portfolio](https://github.com/calinrus-dev/portfolio)
 
-- **Un experimento con una dirección clara.** La consola de fantasía es la visión de producto; no se presenta como una plataforma terminada para terceros.
-- **Crear y ejecutar en un mismo contexto.** El interés está en conectar el trabajo sobre recursos con la experiencia del juego.
-- **Investigar el límite entre interfaz y motor.** Dart FFI permite explorar esa relación, sin publicar contratos ni implementación interna.
 
-## Explorar el caso
-
-- [Experiencia y recorrido](docs/EXPERIENCIA.md): intención, interacción y criterios de revisión.
-- [Componentes](docs/COMPONENTES.md): las piezas visibles y el papel de cada una.
-- [Diseño técnico](docs/ARQUITECTURA.md): responsabilidades y compromisos de diseño.
-- [Demostraciones](docs/DEMOSTRACIONES.md): qué enseñan las imágenes y cómo leer la evidencia.
-- [Estado y siguientes pasos](docs/ESTADO.md): alcance actual, comprobaciones y trabajo pendiente.
-
-## Sobre este repositorio
-
-Caso de estudio público de un proyecto con implementación privada. Reúne documentación, diagramas e imágenes seleccionadas. Los detalles del motor, integraciones, datos operativos y código se mantienen en los repositorios privados.
-
-Revisión editorial: 28 de septiembre de 2026. Autor: [Calin Rus](https://github.com/calinrus-dev).
-
-[calinrus.com](https://calinrus.com) · [Instagram @c4linrus](https://www.instagram.com/c4linrus/) · [Todos los proyectos](https://github.com/calinrus-dev/portfolio)
+[Instagram @c4linrus](https://www.instagram.com/c4linrus/) · [LinkedIn / calinrus](https://www.linkedin.com/in/calinrus/)
